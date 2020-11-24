@@ -32,7 +32,7 @@ codeunit 50000 "SDH Calc Working Days"
         repeat
             IF CalenderMgmt.IsNonworkingDay(CheckDate, CustomCalenderChange) THEN
                 NonWorkingDays += 1;
-            CheckDate := CalcDate('1D', CheckDate);
+            CheckDate := CalcDate('<1D>', CheckDate);
         until (CheckDate > EndDate);
         WorkingDays := TotalDays - NonWorkingDays;
     end;
